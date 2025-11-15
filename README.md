@@ -1,6 +1,15 @@
+
 # DuckDB Query API for Microsoft Fabric Lakehouse
 
-A production-ready FastAPI service that provides a read-only SQL query interface to Microsoft Fabric Lakehouse tables using DuckDB.
+- ![DuckDB logo](doc/img/duckdb.png) ![MCP logo](doc/img/mcp.png) ![FastAPI logo](doc/img/fastapi.png)
+
+A FastAPI service that provides a read-only SQL query interface to Microsoft Fabric Lakehouse tables using DuckDB. Includes an MCP (Model Context Protocol) server for interactive, natural-language-driven queries (used with GitHub Copilot). The project is intended for read-only analytics against Fabric lakehouse tables and includes an optional `data_generator.py` helper to populate test data in a separate Microsoft Fabric environment.
+
+- ![Example analytical query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img3.png) —
+- Example analytical query: monthly top-5 purchased products for the current year.
+ 
+
+The images under `doc/img/` are example MCP session screenshots (discovery, sampling, aggregation) and are provided to illustrate expected behavior when MCP is connected to DuckDB via the Fabric integration.
 
 ## Features
 
@@ -9,7 +18,7 @@ A production-ready FastAPI service that provides a read-only SQL query interface
 - **Fabric integration** - Direct access to Microsoft Fabric Lakehouse tables via OneLake
 - **Flexible authentication** - Supports Service Principal, Azure CLI, and Interactive Browser authentication
 - **Delta Lake support** - Reads Delta tables directly from Fabric Lakehouse
-- **Docker ready** - Production-ready containerized deployment
+- **Docker ready** - Containerized deployment
 - **Full API docs** - Auto-generated OpenAPI/Swagger documentation
 
 ## Project Structure
@@ -86,6 +95,25 @@ The API will be available at `http://localhost:8000`
 
 - API Documentation: `http://localhost:8000/docs`
 - Health Check: `http://localhost:8000/health`
+
+## Data Generator (Optional — Fabric test environment)
+
+This repository includes an optional helper script, `data_generator.py`, which can create sample datasets useful for testing queries and MCP interactions. IMPORTANT: the `data_generator.py` workflow is intended to run in a separate test environment in Microsoft Fabric (a sandbox or dev workspace) — do NOT run it against production lakehouses.
+
+Usage notes:
+
+- The generator can create synthetic `customers`, `products`, `sales_transactions`, and `web_analytics` datasets compatible with the examples in this repo.
+- Deploy or run the script in a separate Fabric workspace or environment with its own lakehouse; configure `.env` with the target `FABRIC_WORKSPACE_NAME` and `FABRIC_LAKEHOUSE_NAME` for that test environment.
+- The generator may require Fabric-specific IAM permissions to write to the target lakehouse; use a service principal or an account with write permissions in the test workspace.
+
+Example (conceptual):
+
+```
+# Run generator locally but pointed at a test Fabric workspace (configure .env first)
+python data_generator.py --target-workspace "My Test Workspace" --lakehouse "TestLakehouse"
+```
+
+After the data is created in the test lakehouse, update your primary repo `.env` (or a local test `.env`) to point to the test lakehouse tables when you run the API or the MCP server for demonstrations.
 
 ## Docker Deployment
 
@@ -325,32 +353,14 @@ If queries timeout:
 2. Optimize your SQL query
 3. Consider adding indexes in Fabric
 
-## License
-
-This project is provided as-is for use with Microsoft Fabric Lakehouse.
-
-## Contributing
-
-Contributions are welcome! Please ensure:
-- Code follows existing patterns
-- Tests are included for new features
-- Documentation is updated
-
----
-
 **MCP Session Samples**
 
 The images in `doc/img/` are samples of the Model Context Protocol (MCP) sessions demonstrating a working connection from the MCP server to DuckDB (via Microsoft Fabric). They show the agent discovering tables, sampling rows, running count/aggregation queries, and returning tabular results.
+- ![MCP discovery and available tables](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img1.png) — MCP discovery and available tables found in the lakehouse (shows table list and summary).
+- ![Sample rows and total-row count query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img2.png) — Sample rows and a total-row count query executed against the `web_analytics` table.
+- ![Example analytical query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img3.png) — Example analytical query: monthly top-5 purchased products for the current year.
 
-- `doc/img/img1.png` — MCP discovery and available tables found in the lakehouse (shows table list and suggested next actions).
-- `doc/img/img2.png` — Sample rows and a total-row count query executed against the `web_analytics` table (shows sample rows and the count result).
-- `doc/img/img3.png` — Example analytical query: monthly top-5 purchased products for the current year (shows grouped aggregation results).
-
-These screenshots are included as examples of how the MCP server interacts with DuckDB and formats results. To add more MCP session samples, place PNGs in `doc/img/` and reference them here, for example:
-
-```
-![MCP session example](doc/img/your-image.png)
-```
+These screenshots are included as examples of how the MCP server interacts with DuckDB and formats results using github copilot.
 
 ---
 
