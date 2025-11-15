@@ -1,8 +1,11 @@
 
 # DuckDB Query API for Microsoft Fabric Lakehouse
 
-- ![DuckDB logo](https://github.com/duckdb/duckdb/blob/main/logo/DuckDB_Logo-horizontal-dark-mode.png) ![MCP logo]([doc/img/mcp.png]([https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/logo/dark.png](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/logo/dark.svg)) ![FastAPI logo](https://github.com/fastapi/fastapi/blob/master/docs/en/docs/img/logo-margin/logo-teal-vector.svg)
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/duckdb/duckdb/main/logo/DuckDB_Logo-horizontal-dark-mode.png" alt="DuckDB logo" width="48" />
+  <img src="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/docs/logo/dark.png" alt="MCP logo" width="48" />
+  <img src="https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/img/logo-margin/logo-teal-vector.svg" alt="FastAPI logo" width="48" />
+</p>
 A FastAPI service that provides a read-only SQL query interface to Microsoft Fabric Lakehouse tables using DuckDB. Includes an MCP (Model Context Protocol) server for interactive, natural-language-driven queries (used with GitHub Copilot). The project is intended for read-only analytics against Fabric lakehouse tables and includes an optional `data_generator.py` helper to populate test data in a separate Microsoft Fabric environment.
 
 - ![Example analytical query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img3.png) —
