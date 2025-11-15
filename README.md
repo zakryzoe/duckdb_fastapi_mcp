@@ -2,10 +2,14 @@
 # DuckDB Query API for Microsoft Fabric Lakehouse
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/duckdb/duckdb/main/logo/DuckDB_Logo-horizontal-dark-mode.png" alt="DuckDB logo" width="48" />
-  <img src="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/docs/logo/dark.png" alt="MCP logo" width="48" />
-  <img src="https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/img/logo-margin/logo-teal-vector.svg" alt="FastAPI logo" width="48" />
+  <img src="https://raw.githubusercontent.com/duckdb/duckdb/main/logo/DuckDB_Logo-horizontal-dark-mode.png" alt="DuckDB logo" width="128" />
+  <img src="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/docs/logo/dark.png" alt="MCP logo" width="128" />
+  <img src="https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/img/logo-margin/logo-teal-vector.svg" alt="FastAPI logo" width="128" />
+  <img src="https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/fabric_28_color.svg" alt="Microsoft Fabric Logo" width="128" />
+  <img src="https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/lakehouse_64_item.svg" alt="Lakehouse" width="128" />
 </p>
+
+https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/fabric_28_color.svg
 A FastAPI service that provides a read-only SQL query interface to Microsoft Fabric Lakehouse tables using DuckDB. Includes an MCP (Model Context Protocol) server for interactive, natural-language-driven queries (used with GitHub Copilot). The project is intended for read-only analytics against Fabric lakehouse tables and includes an optional `data_generator.py` helper to populate test data in a separate Microsoft Fabric environment.
 
 - ![Example analytical query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img3.png) —
