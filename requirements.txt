@@ -1,0 +1,29 @@
+# Web framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# DuckDB (matching working_example.ipynb version)
+duckdb==1.4.2
+
+# Azure (matching working_example.ipynb versions)
+azure-identity==1.25.1
+azure-storage-file-datalake==12.22.0
+
+# Data handling
+pyarrow==22.0.0
+pytz
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.24.0
+httpx==0.28.1
+
+# SQL parsing (for validation)
+sqlparse==0.5.3
+
+# MCP Server
+mcp==1.1.2
+httpx==0.28.1

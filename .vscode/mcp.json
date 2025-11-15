@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "duckdbFabric": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${workspaceFolder}/mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "DUCKDB_API_URL": "http://localhost:8000"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.pytest_cache
+.coverage
+htmlcov
+
+# Virtual environments
+venv
+env
+ENV
+.venv
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# DuckDB
+*.db
+*.duckdb
+
+# Documentation
+README.md
+docs/
+
+# Tests
+tests/
+.pytest_cache
+
+# Environment files
+.env
+
+# Azure token (will be mounted at runtime)
+.azure_token
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
