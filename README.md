@@ -3,13 +3,13 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/duckdb/duckdb/main/logo/DuckDB_Logo-horizontal-dark-mode.png" alt="DuckDB logo" width="128" />
-  <img src="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/docs/logo/dark.png" alt="MCP logo" width="128" />
+  <img src="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/docs/logo/dark.png" alt="MCP logo" width="200" />
   <img src="https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/img/logo-margin/logo-teal-vector.svg" alt="FastAPI logo" width="128" />
-  <img src="https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/fabric_28_color.svg" alt="Microsoft Fabric Logo" width="128" />
-  <img src="https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/lakehouse_64_item.svg" alt="Lakehouse" width="128" />
+  <img src="https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/fabric_28_color.svg" alt="Microsoft Fabric Logo" width="40" />
+  <img src="https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/lakehouse_24_item.svg" alt="Lakehouse" width="44" />
 </p>
 
-https://github.com/FabricTools/fabric-icons/blob/main/node_modules/@fabric-msft/svg-icons/dist/svg/fabric_28_color.svg
+
 A FastAPI service that provides a read-only SQL query interface to Microsoft Fabric Lakehouse tables using DuckDB. Includes an MCP (Model Context Protocol) server for interactive, natural-language-driven queries (used with GitHub Copilot). The project is intended for read-only analytics against Fabric lakehouse tables and includes an optional `data_generator.py` helper to populate test data in a separate Microsoft Fabric environment.
 
 - ![Example analytical query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img3.png) —
@@ -363,9 +363,12 @@ If queries timeout:
 **MCP Session Samples**
 
 The images in `doc/img/` are samples of the Model Context Protocol (MCP) sessions demonstrating a working connection from the MCP server to DuckDB (via Microsoft Fabric). They show the agent discovering tables, sampling rows, running count/aggregation queries, and returning tabular results.
-- ![MCP discovery and available tables](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img1.png) — MCP discovery and available tables found in the lakehouse (shows table list and summary).
-- ![Sample rows and total-row count query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img2.png) — Sample rows and a total-row count query executed against the `web_analytics` table.
-- ![Example analytical query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img3.png) — Example analytical query: monthly top-5 purchased products for the current year.
+MCP discovery and available tables found in the lakehouse (shows table list and summary).
+  ![MCP discovery and available tables](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img1.png)
+Sample rows and a total-row count query executed against the `web_analytics` table.
+  ![Sample rows and total-row count query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img2.png)
+Example analytical query: monthly top-5 purchased products for the current year.
+  ![Example analytical query](https://raw.githubusercontent.com/zakryzoe/duckdb_fastapi_mcp/2a2667a8760a1ad90f934286dd5f8a61802ce485/doc/img/img3.png) 
 
 These screenshots are included as examples of how the MCP server interacts with DuckDB and formats results using github copilot.
 
